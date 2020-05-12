@@ -3,85 +3,91 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miney Boi</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 <body class="text-light">
-
-  <header class="container-fluid text-center mt-2">
-    <div class="row">
-      <div class="col">
-        <h1>MOON MINER</h1>
-      </div>
+<header class="container-fluid text-center mt-3">
+  <div class="row">
+    <div class="col">
+      <h1>MOON MINER</h1>
+      <small>Tap The Moon!</small>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container-fluid justify-content-center mt-5">
-
-
-    <div class="row" id="middle">
-      <div class="col mr-5" id="stats-col">
-        <h3 class="text-center">STATS</h3>
-
-        <div class="row">
-          <div class="p-2 card w-100 bg-dark card-border">
-            <p>Cheese/Second: <span id="cps">0</span></p>
-            <p>Click modifier: +<span id="modifier">0</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col ">
-        <img src="moon.png" class="pointer" onclick="mine()">
-      </div>
-
-      <div class="col ml-5" id="inventory-col">
-        <h3>INVENTORY</h3>
-
-        <div class="row">
-          <div class="p-2 card w-100 bg-dark card-border">
-            <h5>Cheese: <span id="cheese-count">0</span></h5>
-            <p>Knives: <span id="knife-count">0</span></p>
-            <p>Miners: <span id="miner-count">0</span></p>
-            <p>Graters: <span id="grater-count">0</span></p>
-            <p>Shakers: <span id="shaker-count">0</span></p>
-          </div>
-        </div>
-
-      </div>
-    </div>
+<main class="dflex container-fluid align-items-center justify-content-center mt-3">
 
 
-  </main>
+  <div class="row text-center" id="middle">
+    <div class="col-10 col-md-3 m-auto m-md-2 order-3 order-md-1" id="stats-col">
+      <h3 class="text-center">STATS</h3>
 
-  <footer class="container-fluid">
-    <div class="row" id="bottom">
-      <div class="col-2 text-center m-auto">
-        <h3>STORE</h3>
-        <div class="card bg-dark card-border">
-          <button class="btn btn-outline-light m-2" onclick="addKnife()">BUY KNIFE: <span id="knife-cost">50</span></button>
-          <small>Knives give +1 cheese per click</small>
-          <button class="btn btn-outline-light m-2" onclick="addMiner()">HIRE MINER: <span id="miner-cost">250</span></button>
-          <small>Miners give +1 cheese per click and +1 c/s </small>
-          <button class="btn btn-outline-light m-2" onclick="addGrater()">HIRE GRATER: <span id="grater-cost">500</span></button>
-          <small>Graters give +2 cheese per click and +3 c/s</small>
-          <button class="btn btn-outline-light m-2" onclick="addShaker()">BUY SHAKER: <span id="shaker-cost">1000</span></button>
-          <small class="mb-2">Shakers give +10 cheese per click</small>
+      <div class="row mb-2">
+        <div class="p-2 card w-100 bg-dark card-border">
+          <p>Cheese/Second: <span id="per-second">0</span></p>
+          <p>-------------------------</p>
+          <p>Click modifier: +<span id="per-click">0</span></p>
         </div>
       </div>
+
     </div>
 
-  </footer>
+    <div class="col-12 col-md-5 order-1 order-md-2 mb-4">
+      <!-- TODO INSERT AN ONCLICK -->
+      <img src="./assets/moon.png" class="align-items-center pointer img-fluid" onclick="mine()"> 
+    </div>
+
+    <div class="col-10 col-md-3 m-auto m-md-2 order-2 order-md-3" id="inventory-col">
+      <h3 class="text-center">INVENTORY</h3>
+
+      <div class="row">
+        <div class="p-2 card w-100 bg-dark card-border">
+          <h5>Cheese: <span id="cheese-count">0</span></h5>
+          <p>Knives: <span id="knife-count">0</span></p>
+          <p>Miners: <span id="miner-count">0</span></p>
+          <p>Graters: <span id="grater-count">0</span></p>
+          <p>Shakers: <span id="shaker-count">0</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
+</main>
+
+<footer class="container-fluid mb-5">
+  <div class="row" id="bottom">
+    <div class="col-8 col-md-4 text-center m-auto">
+      <h3>STORE</h3>
+      <div class="card bg-dark card-border">
+        <button class="btn btn-outline-light m-2" onclick="addKnife()">BUY KNIFE: <span id="knife-cost">50</span></button>
+        <small>Knives give +1 cheese per click</small>
+        <button class="btn btn-outline-light m-2" onclick="addMiner()">HIRE MINER: <span id="miner-cost">250</span></button>
+        <small>Miners give +1 cheese per click and +1 c/s </small>
+        <button class="btn btn-outline-light m-2" onclick="addGrater()">HIRE GRATER: <span id="grater-cost">500</span></button>
+        <small>Graters give +2 cheese per click and +3 c/s</small>
+        <button class="btn btn-outline-light m-2" onclick="addShaker()">BUY SHAKER: <span id="shaker-cost">1000</span></button>
+        <small class="mb-2">Shakers give +10 cheese per click</small>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col mx-auto ">
+      <small>Made by Spenser Davies</small>
+
+    </div>
+  </div>
+</footer>
 
 
-  <script src="app.js"></script>
+  <script src="./app/main.js" type="module"></script>
 </body>
 
 </html>
