@@ -10,7 +10,6 @@ let priceMultiplier = 1.1;
 let clickModifier = 0;
 let passiveCheese = 0;
 
-
 let clickUpgrades = {
   knife: {
     price: 10,
@@ -104,17 +103,6 @@ function startInterval() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 function update(){
   let cheeseElem = document.getElementById("cheese-count");
   cheeseElem.innerText = cheese.toFixed(0);
@@ -144,11 +132,11 @@ function update(){
   shakerCostElem.innerText = clickUpgrades.shaker.price.toFixed(0);
   //NOTE updates shaker count
 
-  let modifierElem = document.getElementById("modifier");
+  let modifierElem = document.getElementById("per-click");
   modifierElem.innerText = clickModifier.toString();
   //NOTE updates modifier
 
-  let passiveElem = document.getElementById("cps");
+  let passiveElem = document.getElementById("per-second");
   passiveElem.innerText = passiveCheese.toString();
 
 }
